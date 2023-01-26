@@ -1,0 +1,41 @@
+<%- include('partials/header'); -%>
+
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900"><%= dynamicPostTitle %></h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base"><a href="https://drive.google.com/file/d/<%=link %>/view?usp=share_link">Download the practice sheet for free.</a></p>
+      </div>
+      <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+        <table class="table-auto w-full text-left whitespace-no-wrap">
+          <thead>
+            <tr>
+              <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">More related practice sheets</th>
+              <th class="w-10 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <% posts.forEach(function(post){ %>
+
+
+                <tr>
+                    <td class="px-4 py-3"><a href= "<%= %>" ><%= dynamicSheetTitle+post %></a></td>
+                    <td class="w-10 text-center">
+                      <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"><a href="/practice/<%= examname%>/<%= subjectname%>/<%= chaptername%>/<%= sheetno%><%=post%>">Download</a></button>
+                    </td>
+                  </tr>
+                <% }) %>
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+<%- include('partials/footer'); -%>
