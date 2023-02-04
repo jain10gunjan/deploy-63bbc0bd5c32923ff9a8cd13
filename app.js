@@ -24,8 +24,7 @@ app.use(express.static("public"));
 let posts = [];
 
 app.get("/", function(req,res){
-
-  res.redirect('https://ijno.blogspot.com');
+  res.send("App is working...");
 });
 
 //Achieving dynamic website
